@@ -72,6 +72,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>$(SolutionDir)include;$(IncludePath)</IncludePath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)include;$(SolutionDir)external;$(SolutionDir)external\Eigen;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(SolutionDir)include;$(SolutionDir)external;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>
@@ -134,9 +140,11 @@
   <ItemGroup>
     <ClInclude Include="jay_linear_algebra.h" />
     <ClInclude Include="jay_math.h" />
+    <ClInclude Include="jay_math_define.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="jay_linear_algebra.cpp" />
+    <ClCompile Include="jay_math_define.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
